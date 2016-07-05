@@ -64,7 +64,7 @@ ofxDlibFaceDetector::~ofxDlibFaceDetector() {
 }
 void ofxDlibFaceDetector::setup() {
 	if (!_detector) {
-		_detector = std::shared_ptr<dlib::frontal_face_detector>(new dlib::frontal_face_detector(), [](void *p) {
+		_detector = std::shared_ptr<dlib::frontal_face_detector>(new dlib::frontal_face_detector(dlib::get_frontal_face_detector()), [](void *p) {
 			auto ptr = (dlib::frontal_face_detector *)p;
 			delete ptr;
 		});

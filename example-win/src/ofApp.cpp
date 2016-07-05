@@ -4,7 +4,7 @@
 void ofApp::setup(){
 	_detector.setup();
 	_input.listDevices();
-	_input.setDeviceID(1);
+	_input.setDeviceID(0);
 	_input.setup(1280, 720);
 }
 
@@ -13,7 +13,6 @@ void ofApp::update(){
 	_input.update();
 	if (_input.isFrameNew()) {
 		_faces = _detector.detect(_input.getPixels(), 0);
-		printf("%d\n", (int)_faces.size());
 	}
 }
 
