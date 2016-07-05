@@ -1,0 +1,325 @@
+<?xml version="1.0"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<ItemGroup Label="ProjectConfigurations">
+		<ProjectConfiguration Include="Debug|Win32">
+			<Configuration>Debug</Configuration>
+			<Platform>Win32</Platform>
+		</ProjectConfiguration>
+		<ProjectConfiguration Include="Debug|x64">
+			<Configuration>Debug</Configuration>
+			<Platform>x64</Platform>
+		</ProjectConfiguration>
+		<ProjectConfiguration Include="Release|Win32">
+			<Configuration>Release</Configuration>
+			<Platform>Win32</Platform>
+		</ProjectConfiguration>
+		<ProjectConfiguration Include="Release|x64">
+			<Configuration>Release</Configuration>
+			<Platform>x64</Platform>
+		</ProjectConfiguration>
+	</ItemGroup>
+	<PropertyGroup Label="Globals">
+		<ProjectGuid>{7FD42DF7-442E-479A-BA76-D0022F99702A}</ProjectGuid>
+		<Keyword>Win32Proj</Keyword>
+		<RootNamespace>example-win</RootNamespace>
+	</PropertyGroup>
+	<Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+		<ConfigurationType>Application</ConfigurationType>
+		<CharacterSet>Unicode</CharacterSet>
+		<PlatformToolset>v140</PlatformToolset>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+		<ConfigurationType>Application</ConfigurationType>
+		<CharacterSet>Unicode</CharacterSet>
+		<PlatformToolset>v140</PlatformToolset>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+		<ConfigurationType>Application</ConfigurationType>
+		<CharacterSet>Unicode</CharacterSet>
+		<WholeProgramOptimization>true</WholeProgramOptimization>
+		<PlatformToolset>v140</PlatformToolset>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+		<ConfigurationType>Application</ConfigurationType>
+		<CharacterSet>Unicode</CharacterSet>
+		<WholeProgramOptimization>true</WholeProgramOptimization>
+		<PlatformToolset>v140</PlatformToolset>
+	</PropertyGroup>
+	<Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+	<ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+		<Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+		<Import Project="..\..\..\libs\openFrameworksCompiled\project\vs\openFrameworksRelease.props" />
+	</ImportGroup>
+	<ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+		<Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+		<Import Project="..\..\..\libs\openFrameworksCompiled\project\vs\openFrameworksRelease.props" />
+	</ImportGroup>
+	<ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+		<Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+		<Import Project="..\..\..\libs\openFrameworksCompiled\project\vs\openFrameworksDebug.props" />
+	</ImportGroup>
+	<ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+		<Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+		<Import Project="..\..\..\libs\openFrameworksCompiled\project\vs\openFrameworksDebug.props" />
+	</ImportGroup>
+	<PropertyGroup Label="UserMacros" />
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+		<OutDir>bin\</OutDir>
+		<IntDir>obj\$(Configuration)\</IntDir>
+		<TargetName>$(ProjectName)_debug</TargetName>
+		<LinkIncremental>true</LinkIncremental>
+		<GenerateManifest>true</GenerateManifest>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+		<OutDir>bin\</OutDir>
+		<IntDir>obj\$(Configuration)\</IntDir>
+		<TargetName>$(ProjectName)_debug</TargetName>
+		<LinkIncremental>true</LinkIncremental>
+		<GenerateManifest>true</GenerateManifest>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+		<OutDir>bin\</OutDir>
+		<IntDir>obj\$(Configuration)\</IntDir>
+		<LinkIncremental>false</LinkIncremental>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+		<OutDir>bin\</OutDir>
+		<IntDir>obj\$(Configuration)\</IntDir>
+		<LinkIncremental>false</LinkIncremental>
+	</PropertyGroup>
+	<ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+		<ClCompile>
+			<Optimization>Disabled</Optimization>
+			<BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+			<PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
+			<RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+			<WarningLevel>Level3</WarningLevel>
+			<AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);..\..\..\addons\ofxDlibFaceDetector\libs;..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0;..\..\..\addons\ofxDlibFaceDetector\src</AdditionalIncludeDirectories>
+			<CompileAs>CompileAsCpp</CompileAs>
+		</ClCompile>
+		<Link>
+			<GenerateDebugInformation>true</GenerateDebugInformation>
+			<SubSystem>Console</SubSystem>
+			<RandomizedBaseAddress>false</RandomizedBaseAddress>
+			<AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+			<AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+		</Link>
+		<PostBuildEvent />
+	</ItemDefinitionGroup>
+	<ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+		<ClCompile>
+			<Optimization>Disabled</Optimization>
+			<BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+			<PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
+			<RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+			<WarningLevel>Level3</WarningLevel>
+			<AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);..\..\..\addons\ofxDlibFaceDetector\libs;..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0;..\..\..\addons\ofxDlibFaceDetector\src</AdditionalIncludeDirectories>
+			<CompileAs>CompileAsCpp</CompileAs>
+			<MultiProcessorCompilation>true</MultiProcessorCompilation>
+		</ClCompile>
+		<Link>
+			<GenerateDebugInformation>true</GenerateDebugInformation>
+			<SubSystem>Console</SubSystem>
+			<RandomizedBaseAddress>false</RandomizedBaseAddress>
+			<AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+			<AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+		</Link>
+		<PostBuildEvent />
+	</ItemDefinitionGroup>
+	<ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+		<ClCompile>
+			<WholeProgramOptimization>false</WholeProgramOptimization>
+			<PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
+			<RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+			<WarningLevel>Level3</WarningLevel>
+			<AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);..\..\..\addons\ofxDlibFaceDetector\libs;..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0;..\..\..\addons\ofxDlibFaceDetector\src</AdditionalIncludeDirectories>
+			<CompileAs>CompileAsCpp</CompileAs>
+			<MultiProcessorCompilation>true</MultiProcessorCompilation>
+		</ClCompile>
+		<Link>
+			<IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
+			<GenerateDebugInformation>false</GenerateDebugInformation>
+			<SubSystem>Console</SubSystem>
+			<OptimizeReferences>true</OptimizeReferences>
+			<EnableCOMDATFolding>true</EnableCOMDATFolding>
+			<RandomizedBaseAddress>false</RandomizedBaseAddress>
+			<AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+			<AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+		</Link>
+		<PostBuildEvent />
+	</ItemDefinitionGroup>
+	<ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+		<ClCompile>
+			<WholeProgramOptimization>false</WholeProgramOptimization>
+			<PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
+			<RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+			<WarningLevel>Level3</WarningLevel>
+			<AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);..\..\..\addons\ofxDlibFaceDetector\libs;..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0;..\..\..\addons\ofxDlibFaceDetector\src</AdditionalIncludeDirectories>
+			<CompileAs>CompileAsCpp</CompileAs>
+		</ClCompile>
+		<Link>
+			<IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
+			<GenerateDebugInformation>false</GenerateDebugInformation>
+			<SubSystem>Console</SubSystem>
+			<OptimizeReferences>true</OptimizeReferences>
+			<EnableCOMDATFolding>true</EnableCOMDATFolding>
+			<RandomizedBaseAddress>false</RandomizedBaseAddress>
+			<AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+			<AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+		</Link>
+		<PostBuildEvent />
+	</ItemDefinitionGroup>
+	<ItemGroup>
+		<ClCompile Include="src\main.cpp" />
+		<ClCompile Include="src\ofApp.cpp" />
+		<ClCompile Include="..\..\..\addons\ofxDlibFaceDetector\src\ofxDlibFaceDetector.cpp" />
+		<ClCompile Include="..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0\dlib\all\source.cpp" />
+	</ItemGroup>
+	<ItemGroup>
+		<ClInclude Include="src\ofApp.h" />
+		<ClInclude Include="..\..\..\addons\ofxDlibFaceDetector\src\ofxDlibFaceDetector.hpp" />
+		<ClInclude Include="..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0\dlib\algs.h" />
+		<ClInclude Include="..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0\dlib\any.h" />
+		<ClInclude Include="..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0\dlib\array.h" />
+		<ClInclude Include="..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0\dlib\array2d.h" />
+		<ClInclude Include="..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0\dlib\assert.h" />
+		<ClInclude Include="..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0\dlib\base64.h" />
+		<ClInclude Include="..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0\dlib\bayes_utils.h" />
+		<ClInclude Include="..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0\dlib\bigint.h" />
+		<ClInclude Include="..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0\dlib\binary_search_tree.h" />
+		<ClInclude Include="..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0\dlib\bit_stream.h" />
+		<ClInclude Include="..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0\dlib\bound_function_pointer.h" />
+		<ClInclude Include="..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0\dlib\bridge.h" />
+		<ClInclude Include="..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0\dlib\bsp.h" />
+		<ClInclude Include="..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0\dlib\byte_orderer.h" />
+		<ClInclude Include="..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0\dlib\clustering.h" />
+		<ClInclude Include="..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0\dlib\cmd_line_parser.h" />
+		<ClInclude Include="..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0\dlib\compress_stream.h" />
+		<ClInclude Include="..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0\dlib\conditioning_class.h" />
+		<ClInclude Include="..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0\dlib\config.h" />
+		<ClInclude Include="..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0\dlib\config_reader.h" />
+		<ClInclude Include="..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0\dlib\console_progress_indicator.h" />
+		<ClInclude Include="..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0\dlib\control.h" />
+		<ClInclude Include="..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0\dlib\cpp_pretty_printer.h" />
+		<ClInclude Include="..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0\dlib\cpp_tokenizer.h" />
+		<ClInclude Include="..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0\dlib\crc32.h" />
+		<ClInclude Include="..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0\dlib\data_io.h" />
+		<ClInclude Include="..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0\dlib\directed_graph.h" />
+		<ClInclude Include="..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0\dlib\dir_nav.h" />
+		<ClInclude Include="..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0\dlib\disjoint_subsets.h" />
+		<ClInclude Include="..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0\dlib\dnn.h" />
+		<ClInclude Include="..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0\dlib\enable_if.h" />
+		<ClInclude Include="..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0\dlib\entropy_decoder.h" />
+		<ClInclude Include="..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0\dlib\entropy_decoder_model.h" />
+		<ClInclude Include="..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0\dlib\entropy_encoder.h" />
+		<ClInclude Include="..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0\dlib\entropy_encoder_model.h" />
+		<ClInclude Include="..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0\dlib\error.h" />
+		<ClInclude Include="..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0\dlib\filtering.h" />
+		<ClInclude Include="..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0\dlib\float_details.h" />
+		<ClInclude Include="..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0\dlib\geometry.h" />
+		<ClInclude Include="..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0\dlib\graph.h" />
+		<ClInclude Include="..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0\dlib\graph_cuts.h" />
+		<ClInclude Include="..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0\dlib\graph_utils.h" />
+		<ClInclude Include="..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0\dlib\graph_utils_threaded.h" />
+		<ClInclude Include="..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0\dlib\gui_core.h" />
+		<ClInclude Include="..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0\dlib\gui_widgets.h" />
+		<ClInclude Include="..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0\dlib\hash.h" />
+		<ClInclude Include="..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0\dlib\hash_map.h" />
+		<ClInclude Include="..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0\dlib\hash_set.h" />
+		<ClInclude Include="..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0\dlib\hash_table.h" />
+		<ClInclude Include="..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0\dlib\image_io.h" />
+		<ClInclude Include="..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0\dlib\image_keypoint.h" />
+		<ClInclude Include="..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0\dlib\image_processing.h" />
+		<ClInclude Include="..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0\dlib\image_transforms.h" />
+		<ClInclude Include="..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0\dlib\iosockstream.h" />
+		<ClInclude Include="..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0\dlib\is_kind.h" />
+		<ClInclude Include="..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0\dlib\linker.h" />
+		<ClInclude Include="..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0\dlib\logger.h" />
+		<ClInclude Include="..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0\dlib\lsh.h" />
+		<ClInclude Include="..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0\dlib\lz77_buffer.h" />
+		<ClInclude Include="..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0\dlib\lzp_buffer.h" />
+		<ClInclude Include="..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0\dlib\manifold_regularization.h" />
+		<ClInclude Include="..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0\dlib\map.h" />
+		<ClInclude Include="..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0\dlib\matrix.h" />
+		<ClInclude Include="..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0\dlib\md5.h" />
+		<ClInclude Include="..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0\dlib\member_function_pointer.h" />
+		<ClInclude Include="..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0\dlib\memory_manager.h" />
+		<ClInclude Include="..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0\dlib\memory_manager_global.h" />
+		<ClInclude Include="..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0\dlib\memory_manager_stateless.h" />
+		<ClInclude Include="..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0\dlib\misc_api.h" />
+		<ClInclude Include="..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0\dlib\mlp.h" />
+		<ClInclude Include="..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0\dlib\noncopyable.h" />
+		<ClInclude Include="..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0\dlib\numerical_integration.h" />
+		<ClInclude Include="..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0\dlib\numeric_constants.h" />
+		<ClInclude Include="..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0\dlib\opencv.h" />
+		<ClInclude Include="..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0\dlib\optimization.h" />
+		<ClInclude Include="..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0\dlib\pipe.h" />
+		<ClInclude Include="..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0\dlib\pixel.h" />
+		<ClInclude Include="..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0\dlib\platform.h" />
+		<ClInclude Include="..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0\dlib\python.h" />
+		<ClInclude Include="..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0\dlib\quantum_computing.h" />
+		<ClInclude Include="..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0\dlib\queue.h" />
+		<ClInclude Include="..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0\dlib\rand.h" />
+		<ClInclude Include="..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0\dlib\ref.h" />
+		<ClInclude Include="..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0\dlib\reference_counter.h" />
+		<ClInclude Include="..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0\dlib\revision.h" />
+		<ClInclude Include="..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0\dlib\sequence.h" />
+		<ClInclude Include="..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0\dlib\serialize.h" />
+		<ClInclude Include="..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0\dlib\server.h" />
+		<ClInclude Include="..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0\dlib\set.h" />
+		<ClInclude Include="..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0\dlib\set_utils.h" />
+		<ClInclude Include="..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0\dlib\simd.h" />
+		<ClInclude Include="..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0\dlib\sliding_buffer.h" />
+		<ClInclude Include="..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0\dlib\smart_pointers.h" />
+		<ClInclude Include="..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0\dlib\smart_pointers_thread_safe.h" />
+		<ClInclude Include="..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0\dlib\sockets.h" />
+		<ClInclude Include="..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0\dlib\sockstreambuf.h" />
+		<ClInclude Include="..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0\dlib\sort.h" />
+		<ClInclude Include="..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0\dlib\sparse_vector.h" />
+		<ClInclude Include="..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0\dlib\sqlite.h" />
+		<ClInclude Include="..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0\dlib\stack.h" />
+		<ClInclude Include="..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0\dlib\stack_trace.h" />
+		<ClInclude Include="..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0\dlib\static_map.h" />
+		<ClInclude Include="..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0\dlib\static_set.h" />
+		<ClInclude Include="..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0\dlib\statistics.h" />
+		<ClInclude Include="..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0\dlib\std_allocator.h" />
+		<ClInclude Include="..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0\dlib\stl_checked.h" />
+		<ClInclude Include="..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0\dlib\string.h" />
+		<ClInclude Include="..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0\dlib\svm.h" />
+		<ClInclude Include="..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0\dlib\svm_threaded.h" />
+		<ClInclude Include="..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0\dlib\sync_extension.h" />
+		<ClInclude Include="..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0\dlib\threads.h" />
+		<ClInclude Include="..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0\dlib\timeout.h" />
+		<ClInclude Include="..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0\dlib\timer.h" />
+		<ClInclude Include="..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0\dlib\time_this.h" />
+		<ClInclude Include="..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0\dlib\timing.h" />
+		<ClInclude Include="..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0\dlib\tokenizer.h" />
+		<ClInclude Include="..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0\dlib\tuple.h" />
+		<ClInclude Include="..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0\dlib\type_safe_union.h" />
+		<ClInclude Include="..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0\dlib\uintn.h" />
+		<ClInclude Include="..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0\dlib\unicode.h" />
+		<ClInclude Include="..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0\dlib\unordered_pair.h" />
+		<ClInclude Include="..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0\dlib\vectorstream.h" />
+		<ClInclude Include="..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0\dlib\windows_magic.h" />
+		<ClInclude Include="..\..\..\addons\ofxDlibFaceDetector\libs\dlib-19.0\dlib\xml_parser.h" />
+	</ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="$(OF_ROOT)\libs\openFrameworksCompiled\project\vs\openframeworksLib.vcxproj">
+			<Project>{5837595d-aca9-485c-8e76-729040ce4b0b}</Project>
+		</ProjectReference>
+	</ItemGroup>
+	<ItemGroup>
+		<ResourceCompile Include="icon.rc">
+			<AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">/D_DEBUG %(AdditionalOptions)</AdditionalOptions>
+			<AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">/D_DEBUG %(AdditionalOptions)</AdditionalOptions>
+			<AdditionalIncludeDirectories>$(OF_ROOT)\libs\openFrameworksCompiled\project\vs</AdditionalIncludeDirectories>
+		</ResourceCompile>
+	</ItemGroup>
+	<Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+	<ProjectExtensions>
+		<VisualStudio>
+			<UserProperties RESOURCE_FILE="icon.rc" />
+		</VisualStudio>
+	</ProjectExtensions>
+</Project>
